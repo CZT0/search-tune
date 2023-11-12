@@ -9,7 +9,12 @@ import { useStorage } from "@plasmohq/storage/dist/hook"
 import "@/globals.css"
 
 import { SelectModel } from "@/components/model"
-import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from "@/components/ui/accordion"
 
 export default function IndexPopup() {
   const [storageApiKey, setStorageApiKey] = useStorage(
@@ -117,7 +122,6 @@ export default function IndexPopup() {
             Save
           </Button>
         </div>
-
       </form>
     </div>
   )
