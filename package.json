@@ -1,8 +1,8 @@
 {
   "name": "search-tune",
   "displayName": "Search tune",
-  "version": "0.0.1",
-  "description": "Search Tune is a cutting-edge tool designed to enhance and optimize online search experiences. It intelligently analyzes user queries to generate the most efficient and relevant Google search terms, ensuring quicker access to desired information. Perfect for users seeking precision and efficiency in their online searches, Search Tune leverages advanced AI algorithms to refine search queries into targeted keywords and phrases, making every search more effective and user-friendly.",
+  "version": "0.0.2",
+  "description": "Optimizes online searches by intelligently analyzing user queries.",
   "author": "Jellow. <dvdx@foxmail.com>",
   "scripts": {
     "dev": "plasmo dev",

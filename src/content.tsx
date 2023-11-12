@@ -28,33 +28,47 @@ export const config: PlasmoCSConfig = {
 
 const PlasmoOverlay = () => {
   useEffect(() => {
-    let spaceCount = 0
+    let lastKey = ""
+    let lastTime = 0
     const searchBox = document.querySelector(
       'textarea[name="q"]'
     ) as HTMLInputElement
 
-    const handleKeyDown = async (event: { code: string }) => {
-      if (event.code === "Space") {
-        spaceCount++
-        if (spaceCount === 3) {
-          spaceCount = 0
-          const content = searchBox ? searchBox.value : ""
-          const raw_content = searchBox.value
-          searchBox.value = "loading..."
-          try {
-            const stream = await request_openai(content)
-            searchBox.value = ""
-            for await (const chunk of stream) {
-              const text = chunk.choices[0]?.delta?.content
-              if (text) searchBox.value += text
-            }
-          } catch (e) {
-            searchBox.value = raw_content
+    const loadingIndicator = document.createElement("div")
+    loadingIndicator.style.display = "none"
+    document.body.appendChild(loadingIndicator)
+
+    const handleKeyDown = async (event: KeyboardEvent) => {
+      const currentTime = Date.now()
+      if (
+        event.key === "/" &&
+        lastKey === "/" &&
+        currentTime - lastTime < 500
+      ) {
+        const content = searchBox ? searchBox.value : ""
+        const raw_content = content.endsWith("/")
+          ? content.slice(0, -1)
+          : content
+        searchBox.value = raw_content
+        loadingIndicator.style.display = "block"
+        searchBox.disabled = true
+
+        try {
+          const stream = await request_openai(content)
+          searchBox.value = ""
+          for await (const chunk of stream) {
+            const text = chunk.choices[0]?.delta?.content
+            if (text) searchBox.value += text
           }
+        } catch (e) {
+          searchBox.value = raw_content
+        } finally {
+          searchBox.disabled = false // 恢复搜索框
+          loadingIndicator.style.display = "none" // 隐藏加载指示器
         }
-      } else {
-        spaceCount = 0
       }
+      lastKey = event.key
+      lastTime = currentTime
     }
 
     document.addEventListener("keydown", handleKeyDown)

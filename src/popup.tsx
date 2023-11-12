@@ -9,7 +9,12 @@ import { useStorage } from "@plasmohq/storage/dist/hook"
 import "@/globals.css"
 
 import { SelectModel } from "@/components/model"
-import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from "@/components/ui/accordion"
 
 export default function IndexPopup() {
   const [storageApiKey, setStorageApiKey] = useStorage(
@@ -64,7 +69,7 @@ export default function IndexPopup() {
             <AccordionContent>
               <div className={"font-bold text-zinc-500"}>
                 <p>1. Type your search query into the Google search bar.</p>
-                <p>2. Press the spacebar three times after your query.</p>
+                <p>2. Press '/' key twice after your query.</p>
                 <p>3. Get the results you want.</p>
               </div>
             </AccordionContent>
@@ -117,7 +122,6 @@ export default function IndexPopup() {
             Save
           </Button>
         </div>
-
       </form>
     </div>
   )
