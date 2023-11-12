@@ -1,33 +1,45 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+# Search Tune
 
-## Getting Started
+## About
 
-First, run the development server:
+Search Tune is an advanced browser extension that enhances online search efficiency on Google. By leveraging AI
+algorithms, it intelligently analyzes user queries and transforms them into targeted keywords and phrases. This
+precision ensures quicker access to relevant information, making it an ideal tool for users who value a streamlined and
+effective search experience.
 
-```bash
-pnpm dev
-# or
-npm run dev
-```
+## Installation
 
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
+Follow these steps to install the Search Tune extension:
 
-You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
+1. Download the extension from [GitHub releases](#) or the Chrome Web Store (link).
+2. If downloaded from GitHub, unzip the file.
+3. Open Chrome and navigate to `chrome://extensions/`.
+4. Enable 'Developer mode' in the top right corner.
+5. Select 'Load unpacked' and choose the unzipped extension folder.
+6. Search Tune should now appear in your list of extensions.
 
-For further guidance, [visit our Documentation](https://docs.plasmo.com/)
+## Usage
 
-## Making production build
+Using Search Tune is simple and effective:
 
-Run the following:
+1. Go to any Google search page.
+2. Type your search query into the Google search bar.
+3. Press the spacebar three times after your query.
+4. The extension will automatically refine your query into more targeted search terms.
+5. Google will display the optimized search results.
 
-```bash
-pnpm build
-# or
-npm run build
-```
+This feature ensures you get the most relevant results quickly, enhancing your search efficiency significantly.
 
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
+## Contributing
 
-## Submit to the webstores
+We welcome contributions to make Search Tune even better. To contribute:
 
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Create a new Pull Request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md). See the LICENSE.md file for details.
