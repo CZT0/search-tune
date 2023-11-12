@@ -69,7 +69,7 @@ export default function IndexPopup() {
             <AccordionContent>
               <div className={"font-bold text-zinc-500"}>
                 <p>1. Type your search query into the Google search bar.</p>
-                <p>2. Press the spacebar three times after your query.</p>
+                <p>2. Press '/' key twice after your query.</p>
                 <p>3. Get the results you want.</p>
               </div>
             </AccordionContent>

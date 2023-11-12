@@ -24,21 +24,11 @@ Using Search Tune is simple and effective:
 
 1. Go to any Google search page.
 2. Type your search query into the Google search bar.
-3. Press the spacebar three times after your query.
+3. Press '/' key twice after your query.
 4. The extension will automatically refine your query into more targeted search terms.
-5. Google will display the optimized search results.
 
 This feature ensures you get the most relevant results quickly, enhancing your search efficiency significantly.
 
-## Contributing
-
-We welcome contributions to make Search Tune even better. To contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -am 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Create a new Pull Request.
 
 ## License
 
