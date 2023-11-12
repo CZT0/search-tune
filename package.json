@@ -1,7 +1,7 @@
 {
   "name": "search-tune",
   "displayName": "Search tune",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Optimizes online searches by intelligently analyzing user queries.",
   "author": "Jellow. <dvdx@foxmail.com>",
   "scripts": {
