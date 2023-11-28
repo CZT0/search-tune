@@ -1,17 +1,16 @@
 # Search Tune
-
-## About
-
 Search Tune is an advanced browser extension that enhances online search efficiency on Google. By leveraging AI
 algorithms, it intelligently analyzes user queries and transforms them into targeted keywords and phrases. This
 precision ensures quicker access to relevant information, making it an ideal tool for users who value a streamlined and
 effective search experience.
 
+Sure, here's the installation guide updated with the Chrome extension link, in English:
+
 ## Installation
 
 Follow these steps to install the Search Tune extension:
 
-1. Download the extension from [GitHub releases](#) or the Chrome Web Store (link).
+1. Download the extension from [GitHub releases](#) or the Chrome Web Store ([link](https://chromewebstore.google.com/detail/eejhkhbcmpehniabapcgkehaakelkjgn)).
 2. If downloaded from GitHub, unzip the file.
 3. Open Chrome and navigate to `chrome://extensions/`.
 4. Enable 'Developer mode' in the top right corner.
