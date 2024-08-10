@@ -1,4 +1,3 @@
-import { SelectLanguage } from "@/components/language"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { storage } from "@/lib/storage"
@@ -8,7 +7,6 @@ import { useStorage } from "@plasmohq/storage/dist/hook"
 
 import "@/globals.css"
 
-import { SelectModel } from "@/components/model"
 import {
   Accordion,
   AccordionContent,
@@ -37,12 +35,12 @@ export default function IndexPopup() {
   )
   const [storageModel, setStorageModel] = useStorage(
     { key: "model", instance: storage },
-    "gpt-3.5-turbo-0613"
+    "gpt-4o"
   )
   const [apiKey, setApiKey] = useState(storageApiKey)
   const [baseUrl, setBaseUrl] = useState(storageBaseUrl)
   const [language, setLanguage] = useState(storageLanguage)
-  const [model, setModel] = useState(storageLanguage)
+  const [model, setModel] = useState(storageModel)
 
   useEffect(() => {
     setApiKey(storageApiKey)
@@ -81,7 +79,14 @@ export default function IndexPopup() {
             className="block text-gray-700 text-sm font-bold mb-2">
             Search Languages
           </label>
-          <SelectLanguage language={language} setLanguage={setLanguage} />
+          <Input
+            id="language"
+            type="text"
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            placeholder="Enter Search Language"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
         </div>
 
         <div className="mb-4">
@@ -114,8 +119,22 @@ export default function IndexPopup() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
+        <div className="mb-4">
+          <label
+            htmlFor="model"
+            className="block text-gray-700 text-sm font-bold mb-2">
+            Model:
+          </label>
+          <Input
+            id="model"
+            type="text"
+            value={model}
+            onChange={(e) => setModel(e.target.value)}
+            placeholder="Enter Model Name"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
         <div className={"flex space-x-2"}>
-          <SelectModel model={model} setModel={setModel} />
           <Button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto">
